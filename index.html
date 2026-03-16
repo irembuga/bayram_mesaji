@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bayram Sürprizi!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="oyun-alani">
+        <div id="skor-tablosu">Atlanan Şeker: 0/3</div>
+        <div id="karakter"></div>
+        <div id="seker"></div>
+        
+        <audio id="ziplama-sesi" src="ziplama.mp3"></audio>
+
+        <div id="basla-ekrani">
+            <h1>Hoş Geldin!</h1>
+            <p>Zıplamak için tıkla/dokun</p>
+            <button onclick="oyunuBaslat(event)" ontouchstart="oyunuBaslat(event)">Başla</button>
+        </div>
+        
+        <div id="final-ekrani" class="gizli">
+            <div id="konfeti-alani"></div> 
+            <h1 style="z-index: 20; position: relative;">HAYIRLI BAYRAMLAR DKABÇIM!</h1>
+            <p style="z-index: 20; position: relative;">İrem'den sevgilerle...</p>
+            <button style="z-index: 20; position: relative; background-color: #ff3333;" onclick="oyundanCik(event)" ontouchstart="oyundanCik(event)">Çıkış</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+    margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;
+    height: 100vh; background-color: #1a1a2e;
+    font-family: 'Press Start 2P', cursive; overflow: hidden;
+}
+
+#oyun-alani {
+    width: 100%; max-width: 600px; height: 100vh;
+    background-image: url('Arkaplan.png'); background-size: cover;
+    background-position: bottom; position: relative; overflow: hidden;
+}
+
+#skor-tablosu {
+    position: absolute; top: 20px; right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px; border-radius: 10px; border: 3px solid #333;
+    font-size: 10px; color: #333; z-index: 5;
+}
+
+#karakter {
+    width: 250px; height: 250px;
+    background-image: url('Karakter.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center bottom;
+    position: absolute; bottom: 20px; left: 10px; z-index: 2;
+}
+
+#seker {
+    width: 110px; height: 110px;
+    background-image: url('seker1.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center bottom;
+    position: absolute; bottom: 65px; right: -150px; z-index: 2;
+}
+
+.gizli { display: none !important; }
+
+#basla-ekrani, #final-ekrani {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; color: white; z-index: 50;
+}
+
+#final-ekrani { background-color: rgba(255, 182, 193, 0.9); color: #333; }
+
+h1 { font-size: 18px; text-align: center; margin-bottom: 20px; line-height: 1.5; padding: 0 10px; }
+p { font-size: 12px; text-align: center; margin-bottom: 30px; }
+
+button {
+    padding: 15px 30px; font-size: 14px; font-family: 'Press Start 2P', cursive;
+    background-color: #ff69b4; color: white; border: 4px solid #333; cursor: pointer; border-radius: 10px;
+    position: relative; z-index: 100; /* Butonu en üste aldık */
+    pointer-events: auto; /* Tıklamayı zorunlu kıldık */
+}
+
+@keyframes zipla {
+    0% { bottom: 20px; }
+    50% { bottom: 550px; } 
+    100% { bottom: 20px; }
+}
+.ziplama-animasyonu { animation: zipla 0.9s linear; }
+
+@keyframes sekerGel {
+    0% { right: -150px; }
+    100% { right: 100%; }
+}
+.seker-animasyonu { animation: sekerGel 2.2s linear infinite; }
+
+#konfeti-alani { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 15; overflow: hidden; }
+.konfeti-parcasi { position: absolute; width: 10px; height: 30px; top: -50px; }
+@keyframes dusme {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
